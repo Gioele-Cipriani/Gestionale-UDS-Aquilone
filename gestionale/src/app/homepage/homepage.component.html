@@ -1,1 +1,53 @@
-<p>homepage works!</p>
+<div>
+  <h1>ADS Aquilone</h1>
+  <button
+    class="btn btn-dark"
+    (click)="
+      showDiv.previous = !showDiv.previous">
+    Previous
+  </button>
+  <div *ngIf="showDiv.previous">
+    <div>
+      <h1>Work!</h1>
+    </div>
+  </div>
+  
+  <hr>
+  
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Nome</th>
+        <th scope="col">Nazionalità</th>
+        <th scope="col">Genere</th>
+        <th scope="col">Anno di Nascita</th>
+        <th scope="col">N° telefono</th>
+        <th scope="col">Città</th>
+        <th scope="col">Indirizzo</th>
+        <th scope="col">Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td scope="row">Claudio</td>
+        <td>Italia</td>
+        <td>Maschile</td>
+        <td>1982</td>
+        <td>32323232</td>
+        <td>Rovereto</td>
+        <td>Via Leditadalnaso</td>
+        <td>cicciolina@gmail.com</td>
+      </tr>
+      <tr>
+        <td scope="row">Franco</td>
+        <td>Italia</td>
+        <td>Maschile</td>
+        <td>1982</td>
+        <td>32323232</td>
+        <td>Rovereto</td>
+        <td>Via Leditadalnaso</td>
+        <td>cicciolina@gmail.com</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
