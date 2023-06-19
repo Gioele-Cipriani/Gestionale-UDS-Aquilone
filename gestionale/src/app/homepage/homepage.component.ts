@@ -2,17 +2,16 @@ import { Component, ViewEncapsulation } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { Profilo } from '../common/profilo.class';
 
-
 @Component({
   selector: 'app-homepage',
   templateUrl: './homepage.component.html',
   styleUrls: ['./homepage.component.css'],
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
 })
 export class HomepageComponent {
   showDiv = {
-    previous : false
-  }
+    previous: false,
+  };
 
   profilo: Profilo = new Profilo();
   fp!: FormGroup;
@@ -29,8 +28,14 @@ export class HomepageComponent {
   }
 
   genere: string | undefined;
-  opzioniGenere: string[] = ['Maschio', 'Femmina', 'Trans', 'Trav','Non Definito']
+  opzioniGenere: string[] = [
+    'Maschio',
+    'Femmina',
+    'Trans',
+    'Trav',
+    'Non Definito',
+  ];
 
   sfruttamento: string | undefined;
-  opzioniSfruttamento: string[] = ['Sfruttamento', 'Non Sfruttamento']
+  opzioniSfruttamento: string[] = ['Sfruttamento', 'Non Sfruttamento'];
 }

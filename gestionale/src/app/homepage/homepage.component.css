@@ -1,0 +1,25 @@
+.inserimento-dati {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f5f5f5;
+  box-shadow: 0 0 10px #ccc;
+}
+
+/* Stile generale per il menu a tendina */
+.mat-form-field {
+  position: relative; /* Posizione relativa per consentire la sovrapposizione */
+  width: 250px; /* Larghezza del menu a tendina */
+}
+
+/* Stile del pannello di sovrapposizione */
+.dropdown-panel {
+  position: absolute; /* Posizione assoluta per il pannello di sovrapposizione */
+  z-index: 9999; /* Valore z-index per portare il pannello in primo piano */
+  top: 100%; /* Posiziona il pannello sotto l'input */
+  width: 100%; /* Larghezza del pannello uguale all'elemento padre */
+}
