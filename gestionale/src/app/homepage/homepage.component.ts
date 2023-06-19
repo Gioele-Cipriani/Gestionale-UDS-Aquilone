@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { Profilo } from '../common/profilo.class';
 
@@ -6,7 +6,8 @@ import { Profilo } from '../common/profilo.class';
 @Component({
   selector: 'app-homepage',
   templateUrl: './homepage.component.html',
-  styleUrls: ['./homepage.component.css']
+  styleUrls: ['./homepage.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
 export class HomepageComponent {
   showDiv = {
@@ -26,4 +27,10 @@ export class HomepageComponent {
     this.profilo.update(this.fp.value);
     this.profilo.saveToLocalStorage();
   }
+
+  genere: string | undefined;
+  opzioniGenere: string[] = ['Maschio', 'Femmina', 'Trans', 'Trav','Non Definito']
+
+  sfruttamento: string | undefined;
+  opzioniSfruttamento: string[] = ['Sfruttamento', 'Non Sfruttamento']
 }

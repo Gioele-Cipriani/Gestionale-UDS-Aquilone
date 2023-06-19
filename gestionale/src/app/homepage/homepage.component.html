@@ -3,7 +3,7 @@
   <button class="btn btn-dark" (click)="showDiv.previous = !showDiv.previous">
     Aggiungi Persona
   </button>
-  <div *ngIf="showDiv.previous">
+  <div *ngIf="showDiv.previous" class="inserimento-dati">
     <form>
       <div class="row">
         <div class="col">
@@ -13,7 +13,21 @@
           <input type="text" class="form-control" placeholder="Nazionalità" />
         </div>
         <div class="col">
-          <input type="text" class="form-control" placeholder="Genere" />
+          <mat-form-field class="mat-form-field">
+            <mat-label>Genere</mat-label>
+            <mat-select
+              [(ngModel)]="genere"
+              name="genere"
+              panelClass="dropdown-panel"
+            >
+              <mat-option
+                *ngFor="let opzione of opzioniGenere"
+                [value]="opzione"
+              >
+                {{ opzione }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
         </div>
         <div class="col">
           <input
@@ -45,11 +59,21 @@
           />
         </div>
         <div class="col">
-          <input
-            type="text"
-            class="form-control"
-            placeholder="Condiz. di sfruttamento"
-          />
+          <mat-form-field>
+            <mat-label>Condiz. di sfruttamento</mat-label>
+            <mat-select
+              [(ngModel)]="sfruttamento"
+              name="sfruttamento"
+              panelClass="dropdown-panel"
+            >
+              <mat-option
+                *ngFor="let opzione of opzioniSfruttamento"
+                [value]="opzione"
+              >
+                {{ opzione }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
         </div>
         <div class="col">
           <input
@@ -92,14 +116,6 @@
             placeholder="Fascia operativa"
           />
         </div>
-
-        <hr />
-        <h1>Prova</h1>
-        <button mat-button [matMenuTriggerFor]="menu">Apri menu</button>
-        <mat-menu #menu="matMenu">
-          <button mat-menu-item (click)="doSomethingElse()">Elemento 1</button>
-          <button mat-menu-item (click)="doSomethingElse()">Elemento 2</button>
-        </mat-menu>
       </div>
     </form>
   </div>
