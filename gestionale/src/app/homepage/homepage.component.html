@@ -1,19 +1,111 @@
 <div>
   <h1>ADS Aquilone</h1>
-  <button
-    class="btn btn-dark"
-    (click)="
-      showDiv.previous = !showDiv.previous">
-    Previous
+  <button class="btn btn-dark" (click)="showDiv.previous = !showDiv.previous">
+    Aggiungi Persona
   </button>
   <div *ngIf="showDiv.previous">
-    <div>
-      <h1>Work!</h1>
-    </div>
+    <form>
+      <div class="row">
+        <div class="col">
+          <input type="text" class="form-control" placeholder="Nome" />
+        </div>
+        <div class="col">
+          <input type="text" class="form-control" placeholder="Nazionalità" />
+        </div>
+        <div class="col">
+          <input type="text" class="form-control" placeholder="Genere" />
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Anno di Nascita"
+          />
+        </div>
+        <div class="col">
+          <input type="text" class="form-control" placeholder="N° telefono" />
+        </div>
+        <div class="col">
+          <input type="text" class="form-control" placeholder="Città" />
+        </div>
+        <div class="col">
+          <input type="text" class="form-control" placeholder="Indirizzo" />
+        </div>
+        <div class="col">
+          <input type="text" class="form-control" placeholder="Email" />
+        </div>
+
+        <hr />
+
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Anno di arrivo"
+          />
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Condiz. di sfruttamento"
+          />
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Ha già lavorato altrove"
+          />
+        </div>
+        <div class="col">
+          <input type="text" class="form-control" placeholder="Altre U.d.S" />
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="In quale località"
+          />
+        </div>
+
+        <hr />
+
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Zona operativa"
+          />
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Luogo operativo"
+          />
+        </div>
+        <div class="col">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Fascia operativa"
+          />
+        </div>
+
+        <hr />
+        <h1>Prova</h1>
+        <button mat-button [matMenuTriggerFor]="menu">Apri menu</button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item (click)="doSomethingElse()">Elemento 1</button>
+          <button mat-menu-item (click)="doSomethingElse()">Elemento 2</button>
+        </mat-menu>
+      </div>
+    </form>
   </div>
-  
-  <hr>
-  
+
+  <hr />
+
   <table class="table">
     <thead>
       <tr>

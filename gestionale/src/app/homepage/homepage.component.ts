@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { Profilo } from '../common/profilo.class';
 
+
 @Component({
   selector: 'app-homepage',
   templateUrl: './homepage.component.html',
