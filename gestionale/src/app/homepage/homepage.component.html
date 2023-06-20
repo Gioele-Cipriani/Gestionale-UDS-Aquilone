@@ -4,16 +4,30 @@
     Aggiungi Persona
   </button>
   <div *ngIf="showDiv.previous" class="inserimento-dati">
-    <form>
+    <form  [formGroup]="fp" (ngSubmit)="save()">
       <div class="row">
         <div class="col">
-          <input type="text" class="form-control" placeholder="Nome" />
+          <input type="text" class="form-control" placeholder="Nome" formControlName= "nome"/>
         </div>
         <div class="col">
-          <input type="text" class="form-control" placeholder="Nazionalità" />
+          <mat-form-field class="mat-form-field" formControlName="nazionalita">
+            <mat-label>Nazionalità</mat-label>
+            <mat-select
+              [(ngModel)]="nazionalita"
+              name="nazionalita"
+              panelClass="dropdown-panel"
+            >
+              <mat-option
+                *ngFor="let opzione of opzioniNazionalita"
+                [value]="opzione"
+              >
+                {{ opzione }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
         </div>
         <div class="col">
-          <mat-form-field class="mat-form-field">
+          <mat-form-field class="mat-form-field" formControlName="genere">
             <mat-label>Genere</mat-label>
             <mat-select
               [(ngModel)]="genere"
@@ -34,19 +48,20 @@
             type="text"
             class="form-control"
             placeholder="Anno di Nascita"
+            formControlName="anno_nascita"
           />
         </div>
         <div class="col">
-          <input type="text" class="form-control" placeholder="N° telefono" />
+          <input type="text" class="form-control" placeholder="N° telefono" formControlName="telefono"/>
         </div>
         <div class="col">
-          <input type="text" class="form-control" placeholder="Città" />
+          <input type="text" class="form-control" placeholder="Città" formControlName="citta"/>
         </div>
         <div class="col">
-          <input type="text" class="form-control" placeholder="Indirizzo" />
+          <input type="text" class="form-control" placeholder="Indirizzo" formControlName="indirizzo"/>
         </div>
         <div class="col">
-          <input type="text" class="form-control" placeholder="Email" />
+          <input type="text" class="form-control" placeholder="Email" formControlName="email"/>
         </div>
 
         <hr />
@@ -56,10 +71,11 @@
             type="text"
             class="form-control"
             placeholder="Anno di arrivo"
+            formControlName="anno_arrivo"
           />
         </div>
         <div class="col">
-          <mat-form-field>
+          <mat-form-field class="mat-form-field" formControlName="condizioni_sfr">
             <mat-label>Condiz. di sfruttamento</mat-label>
             <mat-select
               [(ngModel)]="sfruttamento"
@@ -76,47 +92,103 @@
           </mat-form-field>
         </div>
         <div class="col">
-          <input
-            type="text"
-            class="form-control"
-            placeholder="Ha già lavorato altrove"
-          />
+          <mat-form-field class="mat-form-field" formControlName="lavorato">
+            <mat-label>Ha già lavorato altrove</mat-label>
+            <mat-select
+              [(ngModel)]="lavorato"
+              name="lavorato"
+              panelClass="dropdown-panel"
+            >
+              <mat-option
+                *ngFor="let opzione of opzioniLavorato"
+                [value]="opzione"
+              >
+                {{ opzione }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
         </div>
         <div class="col">
-          <input type="text" class="form-control" placeholder="Altre U.d.S" />
+          <mat-form-field class="mat-form-field" formControlName="altre_uds">
+            <mat-label>Altre U.d.S </mat-label>
+            <mat-select
+              [(ngModel)]="altreUds"
+              name="altreUds"
+              panelClass="dropdown-panel"
+            >
+              <mat-option
+                *ngFor="let opzione of opzioniAltreUds"
+                [value]="opzione"
+              >
+                {{ opzione }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
         </div>
         <div class="col">
           <input
             type="text"
             class="form-control"
             placeholder="In quale località"
+            formControlName="localita"
           />
         </div>
 
         <hr />
 
         <div class="col">
-          <input
-            type="text"
-            class="form-control"
-            placeholder="Zona operativa"
-          />
+          <mat-form-field class="mat-form-field" formControlName="zona_op">
+            <mat-label>Zona Operativa</mat-label>
+            <mat-select
+              [(ngModel)]="zonaOperativa"
+              name="zonaOperativa" 
+              panelClass="dropdown-panel"
+            >
+              <mat-option
+                *ngFor="let opzione of opzioniZonaOperativa"
+                [value]="opzione"
+              >
+                {{ opzione }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
         </div>
         <div class="col">
-          <input
-            type="text"
-            class="form-control"
-            placeholder="Luogo operativo"
-          />
+          <mat-form-field class="mat-form-field" formControlName="luogo_op">
+            <mat-label>Luogo Operativo</mat-label>
+            <mat-select
+              [(ngModel)]="luogoOperativo"
+              name="luogoOperativo"
+              panelClass="dropdown-panel"
+            >
+              <mat-option
+                *ngFor="let opzione of opzioniLuogoOperativo"
+                [value]="opzione"
+              >
+                {{ opzione }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
         </div>
         <div class="col">
-          <input
-            type="text"
-            class="form-control"
-            placeholder="Fascia operativa"
-          />
+          <mat-form-field class="mat-form-field" formControlName="fascia_op">
+            <mat-label>Fascia Operativa</mat-label>
+            <mat-select
+              [(ngModel)]="fasciaOperativa"
+              name="fasciaOperativa"
+              panelClass="dropdown-panel"
+            >
+              <mat-option
+                *ngFor="let opzione of opzioniFasciaOperativa"
+                [value]="opzione"
+              >
+                {{ opzione }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
         </div>
       </div>
+      <button class="btn btn-dark">Salva</button>
     </form>
   </div>
 
