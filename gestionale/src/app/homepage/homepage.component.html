@@ -205,28 +205,34 @@
         <th scope="col">Città</th>
         <th scope="col">Indirizzo</th>
         <th scope="col">Email</th>
+        <th scope="col">Anno di arrivo</th>
+        <th scope="col">Condiz. di sfruttamento</th>
+        <th scope="col">Ha già lavorato altrove</th>
+        <th scope="col">Altre U.d.S</th>
+        <th scope="col">In quale località</th>
+        <th scope="col">Zona op</th>
+        <th scope="col">Luogo op</th>
+        <th scope="col">Fascia op</th>
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td scope="row">Claudio</td>
-        <td>Italia</td>
-        <td>Maschile</td>
-        <td>1982</td>
-        <td>32323232</td>
-        <td>Rovereto</td>
-        <td>Via Leditadalnaso</td>
-        <td>cicciolina@gmail.com</td>
-      </tr>
-      <tr>
-        <td scope="row">Franco</td>
-        <td>Italia</td>
-        <td>Maschile</td>
-        <td>1982</td>
-        <td>32323232</td>
-        <td>Rovereto</td>
-        <td>Via Leditadalnaso</td>
-        <td>cicciolina@gmail.com</td>
+      <tr *ngFor="let persona of profiloList">
+        <td>{{ persona.nome }}</td>
+        <td>{{ persona.nazionalita }}</td>
+        <td>{{ persona.genere }}</td>
+        <td>{{ persona.anno_nascita }}</td>
+        <td>{{ persona.telefono }}</td>
+        <td>{{ persona.citta }}</td>
+        <td>{{ persona.indirizzo }}</td>
+        <td>{{ persona.email }}</td>
+        <td>{{ persona.anno_arrivo }}</td>
+        <td>{{ persona.condizioni_sfr }}</td>
+        <td>{{ persona.lavorato }}</td>
+        <td>{{ persona.altre_uds }}</td>
+        <td>{{ persona.localita }}</td>
+        <td>{{ persona.zona_op }}</td>
+        <td>{{ persona.luogo_op }}</td>
+        <td>{{ persona.fascia_op }}</td>
       </tr>
     </tbody>
   </table>

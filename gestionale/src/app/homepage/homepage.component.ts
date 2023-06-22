@@ -13,6 +13,7 @@ export class HomepageComponent implements OnInit {
     previous: false,
   };
 
+  profiloList: any[] = [];
   profilo: Profilo = new Profilo();
   fp!: FormGroup;
 
@@ -25,6 +26,7 @@ export class HomepageComponent implements OnInit {
     console.log(this.fp.value);
     this.profilo.update(this.fp.value);
     this.profilo.saveToLocalStorage();
+    this.profiloList.push(this.profilo);
   }
 
   genere: string | undefined;
