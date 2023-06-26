@@ -37,6 +37,7 @@ export class Profilo {
     this.zona_op = newData.zona_op;
     this.luogo_op = newData.luogo_op;
     this.fascia_op = newData.fascia_op;
+    this.profiloList.push(newData);
   }
 
   createForm() {
@@ -61,14 +62,15 @@ export class Profilo {
   }
 
   saveToLocalStorage() {
-    localStorage.setItem('new-profilo', JSON.stringify(this));
+    localStorage.setItem('profiloList', JSON.stringify(this.profiloList));
   }
 
+  profiloList: any[] = [];
+
   loadFromLocalStorage() {
-    let tmp = localStorage.getItem('new-profilo');
-    if (tmp) {
-      let newData = JSON.parse(tmp);
-      this.update(newData);
+    let storedData = localStorage.getItem('profiloList');
+    if (storedData) {
+      this.profiloList = JSON.parse(storedData);
     }
   }
 }

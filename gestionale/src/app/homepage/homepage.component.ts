@@ -26,6 +26,7 @@ export class HomepageComponent implements OnInit {
     console.log(this.fp.value);
     this.profilo.update(this.fp.value);
     this.profilo.saveToLocalStorage();
+    this.profilo.loadFromLocalStorage();
     this.profiloList.push(this.profilo);
   }
 
